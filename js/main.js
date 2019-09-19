@@ -15,21 +15,20 @@ const _ouibounce = ouibounce(document.querySelector('#modal'), {
         	let city = response.city;
             let offerText = `WAIT! SPECIAL OFFER FOR ${city.toUpperCase()} RESIDENTS...`
             document.querySelector('#offers').textContent = offerText;
-            // var caps = string.toUpperCase();
-            // var location = $(".modal-title");
-            // location.append(caps);
+            
         });
-//flipclockjs 
+        // The timer
         timer = new FlipClock($('#timer-body'), 3600, {
             clockFace: 'HourlyCounter',
             countdown: true
         });
-
-        $(document).ready(function(){
-          $("#claim").click(function(){
-            clicks++;
-            console.log(clicks);
-          });
-        });
     }
-  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+	//wait for the DOME to load before proceeding
+	$('#modal-body').on('click', function() { // when the modals body is clicked
+	    $('#modal-body').hide(); //hide the modal body
+	    $('#modal-overlay').hide(); //hide the modal overlay
+	});
+})
