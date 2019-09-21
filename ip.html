@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		fetch('http://ip-api.com/json/?fields=city')
+		.then(res => res.json())
+		.then(res => {
+			console.log("The res is ", res);
+			localStorage.setItem('ip', res.city);
+		})
+		.catch(err => console.log("Could not fetch data => ", err));
+	</script>
+</head>
+<body>
+<h1>I am a boy!!!!</h1>
+</body>
+</html>
